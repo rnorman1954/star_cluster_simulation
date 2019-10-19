@@ -1,0 +1,11 @@
+1.  Create a file with the masses, initial positions and initial velocities of the objects (planets, stars).
+    Maybe use the Sphere2 programme to create a cluster of stationary stars.
+    Call this file ?????.in (ie input file).
+
+2.  Use nbody_sh1 to calculate the subsequent evolution of the system.  Call the output file ?????.out
+
+3.  Use createAnimation programme to create a series of images of the output data.
+
+4.  Use the ImageMagick module "convert" to combine the separate images into an animated gif.
+    ie.  convert *.png file.gif
+

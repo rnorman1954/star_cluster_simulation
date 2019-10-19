@@ -1,0 +1,11 @@
+# ignore the following files & file types
+
+# ignore the file that contains the access token for GitHub
+Access_Token
+
+# ignore the Build directory and any under it
+build/
+
+# ignore these files
+Makefile_complex
+
