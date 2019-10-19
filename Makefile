@@ -1,4 +1,4 @@
-all: nbody_sh1 sphere2 find_binaries2 find_escapees
+all: nbody1 createCluster findBinaries findEscapees
 
 # Which compiler
 #CC = gcc
@@ -10,29 +10,45 @@ CC = g++
 # Options for release
 CFLAGS = -O -Wall
 
-nbody_sh1: nbody_sh1.o
-	$(CC) -o nbody_sh1 nbody_sh1.o
+#----------------------------------
+# Compile the various files
 
-nbody_sh1.o: nbody_sh1.c
-	$(CC) $(CFLAGS) -c nbody_sh1.c
+nbody1: nbody1.o
+	$(CC) -o build/nbody1 nbody1.o
 
-
-sphere2: sphere2.o
-	$(CC) -o sphere2 sphere2.o
-
-sphere2.o: sphere2.c
-	$(CC) $(CFLAGS) -c sphere2.c
+nbody1.o: nbody1.cpp
+	$(CC) $(CFLAGS) -c nbody1.cpp
 
 
-find_binaries2: find_binaries2.o
-	$(CC) -o find_binaries2 find_binaries2.o
+createCluster: createCluster.o
+	$(CC) -o build/createCluster createCluster.o
 
-find_binaries2.o: find_binaries2.c
-	$(CC) $(CFLAGS) -c find_binaries2.c
+createCluster.o: createCluster.cpp
+	$(CC) $(CFLAGS) -c createCluster.cpp
 
 
-find_escapees: find_escapees.o
-	$(CC) -o find_escapees find_escapees.o
+findBinaries: findBinaries.o
+	$(CC) -o build/findBinaries findBinaries.o
 
-find_escapees.o: ../find_escapees/main.c
-	$(CC) $(CFLAGS) -c ../find_escapees/main.c
+findBinaries.o: findBinaries.cpp
+	$(CC) $(CFLAGS) -c findBinaries.cpp
+
+
+findEscapees: findEscapees.o
+	$(CC) -o build/findEscapees findEscapees.o
+
+findEscapees.o: findEscapees.cpp
+	$(CC) $(CFLAGS) -c findEscapees.cpp
+
+
+analyseMassDist: analyseMassDist.o
+	$(CC) -o build/analyseMassDist analyseMassDist.o
+
+analyseMassDist.o: analyseMassDist.cpp
+	$(CC) $(CFLAGS) -c analyseMassDist.cpp
+
+#=========================================
+# Clean up all of the object files
+.PHONY: clean
+clean:
+	rm -f *.o

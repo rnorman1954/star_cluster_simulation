@@ -1,5 +1,8 @@
 # ignore the following files & file types
 
+# ignore the object files created during compilation
+*.o
+
 # ignore the file that contains the access token for GitHub
 Access_Token
 
