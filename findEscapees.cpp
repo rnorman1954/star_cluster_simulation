@@ -1,43 +1,26 @@
-             //================================================================
-            //                                                                |
-           //           /__----__                         ........            |
-          //       .           \                     ....:        :.          |
-         //       :                 _\|/_         ..:                         |
-        //       :                   /|\         :                     _\|/_  |
-       //  ___   ___                  _____                      ___    /|\   |
-      //  /     |   \    /\ \     / |   |   \  / |        /\    |   \         |
-     //  |   __ |___/   /  \ \   /  |   |    \/  |       /  \   |___/         |
-    //   |    | |  \   /____\ \ /   |   |    /   |      /____\  |   \     \/  |
-   //     \___| |   \ /      \ V    |   |   /    |____ /      \ |___/     |   |
-  //                                                                      /   |
- //              :                       _/|     :..                    |/    |
-//                :..               ____/           :....          ..         |
-/*   o   //          :.    _\|/_     /                   :........:           |
- *  O  `//\                 /|\                                               |
- *  |     /\                                                                  |
- *=============================================================================
+/*============================================================================
  *
- *  find_escapees.C:  a tool to determine which stars have sufficient energy to
-                      escape the cluster.
+ *  findEscapees.cpp:  a tool to determine which stars have sufficient energy
+ *                    to escape the cluster.
  *                    The program accepts a stream of N-body snapshots, and
  *                    outputs a list of escaping stars for each snapshot.
  *
- *  note: in this first version, all functions are included in one file,
+ *  Note: in this first version, all functions are included in one file,
  *        without any use of a special library or header files.
  *_____________________________________________________________________________
  *
- *  usage: find_escapees [-h (for help)]
+ *  Usage: findEscapees [-h (for help)]
  *
  *         Input/output are read/written from/to the standard i/o streams.
  *         Since there are no options, the code can simply be run by
  *         specifying the input file for the N-body snapshots:
  *
- *            find_escapees < data.in
+ *            findEscapees < data.in
  *
  *         This will produce data on the screen.  In order to capture the data
  *         in an output file "escapinglist.out", use:
  *
- *            find_escapees < data.in > escapinglist.out
+ *            findEscapees < data.in > escapinglist.out
  *_____________________________________________________________________________
 
  *
@@ -73,7 +56,7 @@
  *     positions and velocities of all particles.
  *_____________________________________________________________________________
  *
- *    version 1:  Mar 2019 R Norman
+ *    Version 1:  Mar 2019 R Norman
  *_____________________________________________________________________________
  */
 

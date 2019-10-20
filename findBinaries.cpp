@@ -1,43 +1,26 @@
-             //================================================================
-            //                                                                |
-           //           /__----__                         ........            |
-          //       .           \                     ....:        :.          |
-         //       :                 _\|/_         ..:                         |
-        //       :                   /|\         :                     _\|/_  |
-       //  ___   ___                  _____                      ___    /|\   |
-      //  /     |   \    /\ \     / |   |   \  / |        /\    |   \         |
-     //  |   __ |___/   /  \ \   /  |   |    \/  |       /  \   |___/         |
-    //   |    | |  \   /____\ \ /   |   |    /   |      /____\  |   \     \/  |
-   //     \___| |   \ /      \ V    |   |   /    |____ /      \ |___/     |   |
-  //                                                                      /   |
- //              :                       _/|     :..                    |/    |
-//                :..               ____/           :....          ..         |
-/*   o   //          :.    _\|/_     /                   :........:           |
- *  O  `//\                 /|\                                               |
- *  |     /\                                                                  |
- *=============================================================================
+/*============================================================================
  *
- *  find_binaries2.C:  a tool to determine which pairs of particles are mutually
+ *  find_binaries2.cpp:  a tool to determine which pairs of stars are mutually
  *                    bound, i.e. form a (temporary) binary.
  *                    The program accepts a stream of N-body snapshots, and
  *                    outputs a list of binaries for each snapshot.
  *
- *  note: in this first version, all functions are included in one file,
+ *  note: in this version, all functions are included in one file,
  *        without any use of a special library or header files.
  *_____________________________________________________________________________
  *
- *  usage: find_binaries2 [-h (for help)]
+ *  usage: findBinaries2 [-h (for help)]
  *
  *         Input/output are read/written from/to the standard i/o streams.
  *         Since there are no options, the code can simply be run by
  *         specifying the input file for the N-body snapshots:
  *
- *            find_binaries2 < data.in
+ *            findBinaries2 < data.in
  *
  *         This will produce data on the screen.  In order to capture the data
  *         in an output file "binarylist.out", use:
  *
- *            find_binaries2 < data.in > binarylist.out
+ *            findBinaries2 < data.in > binarylist.out
  *_____________________________________________________________________________
 
  *
@@ -74,7 +57,8 @@
  *     positions and velocities of all particles.
  *_____________________________________________________________________________
  *
- *    version 1:  Sep 2003   Piet Hut, Jun Makino
+ *    version 1:  Sep 2003  Piet Hut, Jun Makino
+ *    version 2:  Mar 2019  Robert Norman
  *_____________________________________________________________________________
  */
 

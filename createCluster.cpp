@@ -1,30 +1,12 @@
-              // Date-stamp: <2019 09 29>
-             //================================================================
-            //                                                                |
-           //           /__----__                         ........            |
-          //       .           \                     ....:        :.          |
-         //       :                 _\|/_         ..:                         |
-        //       :                   /|\         :                     _\|/_  |
-       //  ___   ___                  _____                      ___    /|\   |
-      //  /     |   \    /\ \     / |   |   \  / |        /\    |   \         |
-     //  |   __ |___/   /  \ \   /  |   |    \/  |       /  \   |___/         |
-    //   |    | |  \   /____\ \ /   |   |    /   |      /____\  |   \     \/  |
-   //     \___| |   \ /      \ V    |   |   /    |____ /      \ |___/     |   |
-  //                                                                      /   |
- //              :                       _/|     :..                    |/    |
-//                :..               ____/           :....          ..         |
-/*   o   //          :.    _\|/_     /                   :........:           |
- *  O  `//\                 /|\                                               |
- *  |     /\                                                                  |
- *=============================================================================
+/*=============================================================================
  *
- *  createCluster.cpp:  generates initial conditions for a sphere of stars with
- *                      different masses
+ *  createCluster.cpp:  generates a file with the initial conditions for a
+ *                      sphere of stars.
  *
  *_____________________________________________________________________________
  *
  *  usage: createCluster
- *                  -n number_of_particles
+ *                  -n number_of_stars
  *                  -m Type of mass distribution
  *                          1   -[Default] All stars have the equal mass = 1/n
  *                          2   -Stars have a random, but equal probability, mass
@@ -32,7 +14,7 @@
  *                          3   -Salpeter (one stage) distribution
  *                          4   -Salpeter (two stage) distribution
  *                          5   -Kroupa, Tout & Gilmore distribution
- *                          6   -
+ *                          6   -Unused at this stage
  *                  -p Type of position distribution
  *                          1   -[Default] All positions are scattered
  *                               homogeneously across the cluster.
@@ -59,13 +41,16 @@
  *_____________________________________________________________________________
  *
  *  Our sphere has unit radius and density determined by the chosen distribution type.
- *  The total mass is unity unless the 'rescaled (-r)' option is chosen.
+ *  The total mass is unity unless the 'rescaled (-r)' option is chosen in which case
+ *  the stars have masses in multiples of the Sun's mass - this is for diagnostic
+ *  purposes as the nbody routine expects the total mass of the cluster to be unity.
  *
- *  Each particle will be sprinkled somewhere randomly within the unit sphere,
+ *  Each star will be sprinkled somewhere randomly within the unit sphere,
  *  with initial velocity determined by the velocity distribution option (-v).
  *_____________________________________________________________________________
  *
- *    version 3:
+ *    version 1:    Jan 2002   Piet Hut, Jun Makino
+ *    version 2:    Oct 2019   Robert Norman
  *____________________________________________________________________________*/
 
 #include  <iostream>

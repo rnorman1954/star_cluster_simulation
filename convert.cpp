@@ -1,11 +1,20 @@
-/*  Takes a file in the sphere2.exe format, strips away the mass,
-    time and velocities to leave a file (stars.dat) of positions only.
-    This can be easily opened with gnuplot to display the positions
-    of the stars.
+/*==========================================================================
+*    convert.cpp
+*        Takes a file in the 'createCluster' or 'nbody' format, strips away the
+*        the mass, time and velocities to leave a file (stars.dat) of positions only.
+*        This can be easily opened with gnuplot to display the positions
+*        of the stars.
+*        This is used for diagnostic purposes.
+*
+*---------------------------------------------------------------------------
+*    Usage:
+*        convert < file.in
+*
+*---------------------------------------------------------------------------
+*   Version: 1  Mar 2019    Robert Norman
+*
+*-------------------------------------------------------------------------*/
 
-    Invoke program with command:
-        convert < file.in
-*/
 #include <iostream>
 #include <stdio.h>
 

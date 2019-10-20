@@ -1,4 +1,4 @@
-all: nbody1 createCluster findBinaries findEscapees
+all: nbody1 createCluster findBinaries findEscapees analyseMassDist createAnimationFiles convert
 
 # Which compiler
 #CC = gcc
@@ -46,6 +46,18 @@ analyseMassDist: analyseMassDist.o
 
 analyseMassDist.o: analyseMassDist.cpp
 	$(CC) $(CFLAGS) -c analyseMassDist.cpp
+
+createAnimationFiles: createAnimationFiles.o
+	$(CC) -o build/createAnimationFiles createAnimationFiles.o
+
+createAnimationFiles.o: createAnimationFiles.cpp
+	$(CC) $(CFLAGS) -c createAnimationFiles.cpp
+
+convert: convert.o
+	$(CC) -o build/convert convert.o
+
+convert.o: convert.cpp
+	$(CC) $(CFLAGS) -c convert.cpp
 
 #=========================================
 # Clean up all of the object files

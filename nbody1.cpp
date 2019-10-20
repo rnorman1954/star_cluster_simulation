@@ -1,35 +1,16 @@
-              // Time-stamp: <2003-09-10 12:22:36 piet>
-             //================================================================
-            //                                                                |
-           //           /__----__                         ........            |
-          //       .           \                     ....:        :.          |
-         //       :                 _\|/_         ..:                         |
-        //       :                   /|\         :                     _\|/_  |
-       //  ___   ___                  _____                      ___    /|\   |
-      //  /     |   \    /\ \     / |   |   \  / |        /\    |   \         |
-     //  |   __ |___/   /  \ \   /  |   |    \/  |       /  \   |___/         |
-    //   |    | |  \   /____\ \ /   |   |    /   |      /____\  |   \     \/  |
-   //     \___| |   \ /      \ V    |   |   /    |____ /      \ |___/     |   |
-  //                                                                      /   |
- //              :                       _/|     :..                    |/    |
-//                :..               ____/           :....          ..         |
-/*   o   //          :.    _\|/_     /                   :........:           |
- *  O  `//\                 /|\                                               |
- *  |     /\                                                                  |
- *=============================================================================
- *
- *  nbody_sh1.C:  an N-body integrator with a shared but variable time step
+/*
+ *  nbody1.cpp:   an N-body integrator with a shared but variable time step
  *                (the same for all particles but its size changing in time),
  *                using the Hermite integration scheme.
  *
  *                ref.: Hut, P., Makino, J. & McMillan, S., 1995,
  *                      Astrophysical Journal Letters 443, L93-L96.
  *
- *  note: in this first version, all functions are included in one file,
+ *  note: in this version, all functions are included in one file,
  *        without any use of a special library or header files.
  *_____________________________________________________________________________
  *
- *  usage: nbody_sh1 [-h (for help)] [-d step_size_control_parameter]
+ *  usage: nbody1    [-h (for help)] [-d step_size_control_parameter]
  *                   [-e diagnostics_interval] [-o output_interval]
  *                   [-t total_duration] [-i (start output at t = 0)]
  *                   [-x (extra debugging diagnostics)]
@@ -50,13 +31,13 @@
  *         the code is by only specifying the i/o files for the N-body
  *         snapshots:
  *
- *            nbody_sh1 < data.in > data.out
+ *            nbody1 < data.in > data.out
  *
  *         The diagnostics information will then appear on the screen.
  *         To capture the diagnostics information in a file, capture the
  *         standard error stream as follows:
  *
- *            (nbody_sh1 < data.in > data.out) >& data.err
+ *            (nbody1 < data.in > data.out) >& data.err
  *
  *  Note: if any of the times specified in the -e, -o, or -t options are not an
  *        an integer multiple of "step", output will occur slightly later than
@@ -89,6 +70,7 @@
  *_____________________________________________________________________________
  *
  *    version 1:  Jan 2002   Piet Hut, Jun Makino
+ *    version 2:  Oct 2019   Robert Norman
  *_____________________________________________________________________________
  */
 

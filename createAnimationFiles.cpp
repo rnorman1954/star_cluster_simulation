@@ -1,8 +1,14 @@
-/*  Takes a file that is output by nbody_sh1.exe and creates separate
-    gnuplot files (png format) that can be combined in GIMP to create a gif animation.
-    The png files are stored in the subfolder 'images'.
-    Invoke by:
-        createAnimationFiles [-h -d -i] < files.out
+/*===================================================================================
+    createAnimationFiles.cpp
+
+        Takes a file that is output by 'nbody1' and creates separate
+        gnuplot files (png format) that can be combined in GIMP or ImageMagik to create
+        a gif animation.
+        The png files are stored in the subfolder 'images'.
+
+*-------------------------------------------------------------------------------------
+    Usage:
+        createAnimationFiles [-h -d -i -f] < file.out
 
         Parameters:
             h   Help.  This lists the valid parameters and their meaning.
@@ -17,7 +23,11 @@
 
             f   Basis for the filename of of all images.  eg. "-f cluster" will produce
                 cluster0.png, cluster1.png, cluster2.png, etc
-*/
+
+----------------------------------------------------------------------------------------
+    version 1:  Aug 2019    Robert Norman
+--------------------------------------------------------------------------------------*/
+
 #include <iostream>
 #include <stdio.h>          //for fprintf, FILE
 #include <unistd.h>         //for getopt()

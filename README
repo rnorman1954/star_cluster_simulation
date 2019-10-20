@@ -1,3 +1,5 @@
+Introduction
+============
 This suite of programmes creates a star cluster, simulates the motion of the stars due to their gravitational interactions over a period of time, plots their positions at various intervals, and creates an animation of their movements.
 
 Many of the routines are based on the "The Art of Computer Science" (http://www.artcompsci.org/).
@@ -14,3 +16,7 @@ Many of the routines are based on the "The Art of Computer Science" (http://www.
     ie.  convert *.png file.gif
 
 There are more detailed instructions at the start of the source code for each programme.
+
+Compiling
+=========
+The 'Makefile' will compile the source code and create the binaries inside the 'build' folder.
