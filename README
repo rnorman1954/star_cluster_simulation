@@ -1,0 +1,16 @@
+This suite of programmes creates a star cluster, simulates the motion of the stars due to their gravitational interactions over a period of time, plots their positions at various intervals, and creates an animation of their movements.
+
+Many of the routines are based on the "The Art of Computer Science" (http://www.artcompsci.org/).
+
+1.  Create a file with the masses, initial positions and initial velocities of the objects (planets, stars).
+    Maybe use the createCluster programme to create a random cluster of stars.
+    Call this file ?????.in (ie input file).
+
+2.  Use the nbody1 programme to calculate the subsequent evolution of the system.  Call the output file ?????.out
+
+3.  Use the createAnimation programme to create a series of images of the output data.
+
+4.  Use the ImageMagick module "convert" to combine the separate images into an animated gif.
+    ie.  convert *.png file.gif
+
+There are more detailed instructions at the start of the source code for each programme.
